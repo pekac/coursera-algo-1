@@ -1,21 +1,21 @@
 #include "deque-iterator.h"
 
-template<typename T>
+template<class T>
 DequeIterator<T>::DequeIterator(TNode<T>* first) {
     current = first;
 }
 
-template<typename T>
+template<class T>
 DequeIterator<T>::~DequeIterator() {
     delete current;
 }
 
-template<typename T>
+template<class T>
 bool DequeIterator<T>::hasNext() {
     return current != NULL;
 }
 
-template<typename T>
+template<class T>
 T DequeIterator<T>::next() {
     T res = current->getValue();
     current = current->getNext();

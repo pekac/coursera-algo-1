@@ -1,4 +1,4 @@
-#include "ll-stack.h"
+#include "linked-list-stack.h"
 
 LinkedListStack::LinkedListStack() {
     first = NULL;

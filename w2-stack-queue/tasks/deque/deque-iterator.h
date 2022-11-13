@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../algos/generic-node.h"
-#include "../algos/iterable.h"
+#include "iterable.h"
+#include "../../algos/generic-node.h"
 
 template<class T>
 class DequeIterator: public Iterator<T> {
