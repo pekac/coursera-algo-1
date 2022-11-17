@@ -7,13 +7,13 @@ class LinkedListQueue {
         Node* first;
         Node* last;
     public:
-        LinkedListQueue() {}
+        LinkedListQueue();
 
-        ~LinkedListQueue() {}
+        ~LinkedListQueue();
 
-        bool isEmpty() {}
+        bool isEmpty();
     
-        void enqueue(string text) {}
+        void enqueue(string text);
 
-        string dequeue() {}
+        string dequeue();
 };

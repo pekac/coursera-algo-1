@@ -8,13 +8,13 @@ class FixedCapacityStack {
         string *stack;
         int count; 
     public:
-        FixedCapacityStack(int n) {}
+        FixedCapacityStack(int n);
 
-        ~FixedCapacityStack() {}
+        ~FixedCapacityStack();
 
-        bool isEmpty() {}
+        bool isEmpty();
 
-        void push(string text) {}
+        void push(string text);
 
-        string pop() {}
+        string pop();
 };

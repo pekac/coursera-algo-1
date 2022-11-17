@@ -1,27 +1,29 @@
 #include "generic-node.h"
+#include<iostream>
+using namespace std;
 
-template<typename T>
+template<class T>
 TNode<T>::TNode(T val) {
     item = val;
     next = NULL;
 }
 
-template<typename T>
+template<class T>
 TNode<T>::~TNode() {
     delete next;
 }
 
-template<typename T>
+template<class T>
 void TNode<T>::linkNext(TNode *node) {
     next = node;
 }
 
-template<typename T>
+template<class T>
 TNode<T>* TNode<T>::getNext() {
     return next;
 }
 
-template<typename T>
+template<class T>
 T TNode<T>::getValue() {
     return item;
 }

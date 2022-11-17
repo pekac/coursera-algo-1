@@ -2,15 +2,15 @@ template<class T>
 class TNode {
     private:
         T item;     
-        TNode *next;
+        TNode<T>* next;
     public:
-        TNode(T val) {}
+        TNode(T val);
 
-        ~TNode() {}
+        ~TNode();
 
-        void linkNext(TNode *node) {}
+        void linkNext(TNode<T>* node);
 
-        TNode* getNext() {}
+        TNode<T>* getNext();
 
-        T getValue() {}
+        T getValue();
 };

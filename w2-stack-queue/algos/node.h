@@ -9,13 +9,13 @@ class Node {
         Node *next;
 
     public:
-        Node(string item) {}
+        Node(string item);
 
-        ~Node() {}
+        ~Node();
 
-        void linkNext(Node *node) {}
+        void linkNext(Node *node);
 
-        Node* getNext() {}
+        Node* getNext();
 
-        string getText() {}
+        string getText();
 };

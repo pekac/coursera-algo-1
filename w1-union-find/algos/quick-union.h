@@ -5,13 +5,13 @@ class QuickUnion {
         int *ids;
         int length = 0;
     public:
-        QuickUnion(int n) {}
+        QuickUnion(int n);
         
-        ~QuickUnion() {}
+        ~QuickUnion();
 
-        int root(int a) {} 
+        int root(int a); 
 
-        void unite(int a, int b) {}
+        void unite(int a, int b);
 
-        bool connected(int a, int b) {}
+        bool connected(int a, int b);
 };

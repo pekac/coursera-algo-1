@@ -11,29 +11,29 @@ class Deque: public Iterable<T> {
         TNode<T>* last;
     public:
     // construct an empty deque
-    Deque() {}
+    Deque();
     
-    ~Deque() {}
+    ~Deque();
 
     // is the deque empty?
-    bool isEmpty() {}
+    bool isEmpty();
 
     // return the number of items on the deque
-    int size() {}
+    int size();
 
     // add the item to the front
-    void addFirst(T item) {}
+    void addFirst(T item);
 
     // add the item to the back
-    void addLast(T item) {}
+    void addLast(T item);
 
     // remove and return the item from the front
-    T removeFirst() {}
+    T removeFirst();
 
     // remove and return the item from the back
     // keep prev ref?
-    T removeLast() {}
+    T removeLast();
 
     // return an iterator over items in order from front to back
-    Iterator<T>* iterator() {}
+    Iterator<T>* iterator();
 };

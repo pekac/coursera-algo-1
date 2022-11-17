@@ -5,11 +5,11 @@ class QuickFind {
         int *ids;
         int length = 0;
     public:
-        QuickFind(int n) {}
+        QuickFind(int n);
 
-        ~QuickFind() {}
+        ~QuickFind();
         
-        void unite(int a, int b) {}
+        void unite(int a, int b);
 
-        bool connected(int a, int b) {}
+        bool connected(int a, int b);
 };

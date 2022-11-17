@@ -6,13 +6,13 @@ class LinkedListStack {
     private:
         Node* first;
     public: 
-        LinkedListStack() {}
+        LinkedListStack();
 
-        ~LinkedListStack() {}
+        ~LinkedListStack();
 
-        bool isEmpty() {}
+        bool isEmpty();
 
-        void push(string text) {}
+        void push(string text);
 
-        string pop() {}
+        string pop();
 };

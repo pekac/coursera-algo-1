@@ -6,13 +6,13 @@ class QuickUnionWeighted {
         int *size;
         int length = 0;
     public:
-        QuickUnionWeighted(int n) {}
+        QuickUnionWeighted(int n);
         
-        ~QuickUnionWeighted() {}
+        ~QuickUnionWeighted();
         
-        int root(int a) {} 
+        int root(int a); 
 
-        void unite(int a, int b) {}
+        void unite(int a, int b);
 
-        bool connected(int a, int b) {}
+        bool connected(int a, int b);
 };

@@ -1,28 +1,28 @@
 #include "generic-stack.h"
 
-template<typename T>
+template<class T>
 Stack<T>::Stack() {
     first = NULL;
 }
 
-template<typename T>
+template<class T>
 Stack<T>::~Stack() {
     delete first;
 }
 
-template<typename T>
+template<class T>
 bool Stack<T>::isEmpty() {
     return first == NULL;
 }        
 
-template<typename T>
+template<class T>
 void Stack<T>::push(T val) {
     TNode<T> *old_first = first;
     first = new TNode<T>(val);
     first->linkNext(old_first);
 }
 
-template<typename T>
+template<class T>
 T Stack<T>::pop() {
     T res = first->getValue();
     first = first->getNext();

@@ -9,19 +9,19 @@ class Percolation {
         bool *openArray;
         QuickUnionWeighted *uf;
     public:
-        Percolation(int n) {}
+        Percolation(int n);
         
-        ~Percolation() {}
+        ~Percolation();
 
-        bool checkIndex(int index) {}
+        bool checkIndex(int index);
 
-        void open(int row, int col) {}
+        void open(int row, int col);
 
-        bool isOpen(int row, int col) {}
+        bool isOpen(int row, int col);
 
-        bool isFull(int row, int col) {}
+        bool isFull(int row, int col);
 
-        int numberOfOpenSites() {}
+        int numberOfOpenSites();
 
-        bool percolates() {}
+        bool percolates();
 };

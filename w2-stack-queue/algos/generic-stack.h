@@ -7,13 +7,13 @@ class Stack {
     private:
         TNode<T>* first;
     public: 
-        Stack() {}
+        Stack();
 
-        ~Stack() {}
+        ~Stack();
 
-        bool isEmpty() {}        
+        bool isEmpty();        
 
-        void push(T val) {}
+        void push(T val);
 
-        T pop() {}
+        T pop();
 };

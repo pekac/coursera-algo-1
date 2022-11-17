@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 
+
 int main() {
     Deque<int>* deq = new Deque<int>();
     deq->addFirst(4);
@@ -14,17 +15,17 @@ int main() {
     deq->addLast(1);   
     
     deq->removeLast();
-    // int first = deq->removeFirst();
-    // int nextToLast = deq->removeLast();
+    int first = deq->removeFirst();
+    int nextToLast = deq->removeLast();
     int size = deq->size();   
     cout << "Size: " << size << endl;
 
-    // Iterator<int>* iterator = deq->iterator();
+    Iterator<int>* iterator = deq->iterator();
 
-    // while (iterator->hasNext()) {
-    //     int value = iterator->next();
-    //     cout << "Iterator elemento: " << value << endl;
-    // }
+    while (iterator->hasNext()) {
+        int value = iterator->next();
+        cout << "Iterator elemento: " << value << endl;
+    }
 
     return 0;
 }

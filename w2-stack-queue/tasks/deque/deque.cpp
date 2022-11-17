@@ -1,4 +1,5 @@
 #include "deque.h"
+#include "deque-iterator.h"
 
 template<class T>
 Deque<T>::Deque() {
@@ -53,39 +54,36 @@ T Deque<T>::removeFirst() {
         // throw e;
     }
     
-    T res = first->getValue()
+    T res = first->getValue();
+    first = first->getNext();
     count--;
     return res;
-    // T res = first->getValue();
-    // first = first->getNext();
-    // count--;
-    // return res;
 }
 
-// template<class T>
-// T Deque<T>::removeLast() {
-//     if (isEmpty()) {
-//         // throw e;
-//     }
+template<class T>
+T Deque<T>::removeLast() {
+    if (isEmpty()) {
+        // throw e;
+    }
 
-//     T res = last->getValue();
-//     if (first->getNext() == NULL) {
-//         first = last = NULL;
-//         count--;
-//         return res;
-//     }
+    T res = last->getValue();
+    if (first->getNext() == NULL) {
+        first = last = NULL;
+        count--;
+        return res;
+    }
 
-//     TNode<T>* nextToLast = first;
-//     while(nextToLast->getNext() != NULL && nextToLast->getNext()->getNext() != NULL) {
-//         nextToLast = nextToLast->getNext();
-//     }
+    TNode<T>* nextToLast = first;
+    while(nextToLast->getNext() != NULL && nextToLast->getNext()->getNext() != NULL) {
+        nextToLast = nextToLast->getNext();
+    }
     
-//     nextToLast->linkNext(NULL);
-//     last = nextToLast;
-//     count--;
+    nextToLast->linkNext(NULL);
+    last = nextToLast;
+    count--;
 
-//     return res;
-// }
+    return res;
+}
 
 
 template<class T>
