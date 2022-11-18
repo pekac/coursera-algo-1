@@ -3,7 +3,6 @@
 #include<iostream>
 using namespace std;
 
-
 int main() {
     Deque<int>* deq = new Deque<int>();
     deq->addFirst(4);

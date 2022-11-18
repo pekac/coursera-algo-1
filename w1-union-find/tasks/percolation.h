@@ -1,6 +1,4 @@
-#pragma once
-
-#include "../algos/quick-union-weighted.h"
+#include "../dsa/quick-union-weighted.h"
 
 class Percolation {
     private:

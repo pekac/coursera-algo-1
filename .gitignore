@@ -1,2 +1,6 @@
 .vscode
 program
+*.o
+*.gch
+
+week1

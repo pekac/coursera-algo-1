@@ -1,7 +1,7 @@
 #pragma once
 
 #include "iterable.h"
-#include "../../algos/generic-node.h"
+#include "../../dsa/generic-node.h"
 
 #include<iostream>
 using namespace std;
