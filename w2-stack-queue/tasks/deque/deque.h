@@ -1,5 +1,3 @@
-#pragma once
-
 #include "iterable.h"
 #include "../../dsa/generic-node.h"
 
@@ -31,7 +29,6 @@ class Deque: public Iterable<T> {
     T removeFirst();
 
     // remove and return the item from the back
-    // keep prev ref?
     T removeLast();
 
     // return an iterator over items in order from front to back

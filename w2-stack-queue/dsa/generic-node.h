@@ -1,3 +1,6 @@
+#ifndef GENERIC_NODE_H
+#define GENERIC_NODE_H
+
 template<class T>
 class TNode {
     private:
@@ -14,3 +17,5 @@ class TNode {
 
         T getValue();
 };
+
+#endif

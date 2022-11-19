@@ -1,3 +1,6 @@
+#ifndef ITERABLE_H
+#define ITERABLE_H
+
 template<class T>
 class Iterator {
     public:
@@ -10,3 +13,5 @@ class Iterable {
     public:
         virtual Iterator<T>* iterator() = 0;
 };
+
+#endif

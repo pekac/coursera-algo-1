@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DEQUE_ITERATOR_H
+#define DEQUE_ITERATOR_H
 
 #include "iterable.h"
 #include "../../dsa/generic-node.h"
@@ -19,3 +20,5 @@ class DequeIterator: public Iterator<T> {
 
         T next();
 };
+
+#endif
