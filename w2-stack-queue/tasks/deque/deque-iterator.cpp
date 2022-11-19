@@ -1,4 +1,9 @@
+#include "../../dsa/generic-node.h"
+#include "iterable.h"
 #include "deque-iterator.h"
+
+#include<iostream>
+using namespace std;
 
 template<class T>
 DequeIterator<T>::DequeIterator(TNode<T>* first) {

@@ -1,4 +1,8 @@
+#include "node.h"
 #include "linked-list-stack.h"
+
+#include <iostream>
+using namespace std;
 
 LinkedListStack::LinkedListStack() {
     first = NULL;

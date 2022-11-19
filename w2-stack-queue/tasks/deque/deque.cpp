@@ -1,5 +1,9 @@
-#include "deque.h"
+#include "../../dsa/generic-node.h"
+#include "iterable.h"
 #include "deque-iterator.h"
+#include "deque.h"
+
+#include <cstddef>
 
 template<class T>
 Deque<T>::Deque() {
@@ -84,7 +88,6 @@ T Deque<T>::removeLast() {
 
     return res;
 }
-
 
 template<class T>
 Iterator<T>* Deque<T>::iterator() {

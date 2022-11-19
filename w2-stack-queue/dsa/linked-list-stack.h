@@ -1,7 +1,3 @@
-#pragma once
-
-#include "node.h"
-
 class LinkedListStack {
     private:
         Node* first;

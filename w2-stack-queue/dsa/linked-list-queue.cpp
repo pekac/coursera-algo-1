@@ -1,4 +1,8 @@
+#include "node.h"
 #include "linked-list-queue.h"
+
+#include <iostream>
+using namespace std;
 
 LinkedListQueue::LinkedListQueue() {
     first = NULL;

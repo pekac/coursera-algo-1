@@ -1,3 +1,4 @@
+#include "generic-node.h"
 #include "generic-stack.h"
 
 template<class T>

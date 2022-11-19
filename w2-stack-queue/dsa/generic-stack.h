@@ -1,7 +1,3 @@
-#pragma once
-
-#include "generic-node.h"
-
 template<class T>
 class Stack {
     private:

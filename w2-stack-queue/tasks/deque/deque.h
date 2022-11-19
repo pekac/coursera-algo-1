@@ -1,6 +1,3 @@
-#include "iterable.h"
-#include "../../dsa/generic-node.h"
-
 template<class T>
 class Deque: public Iterable<T> {
     private:

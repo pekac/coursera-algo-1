@@ -1,8 +1,3 @@
-#pragma once
-
-#include <iostream>
-using namespace std;
-
 class FixedCapacityStack {
     private:
         string *stack;

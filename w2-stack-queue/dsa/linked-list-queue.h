@@ -1,7 +1,3 @@
-#pragma once
-
-#include "node.h"
-
 class LinkedListQueue {
     private:
         Node* first;

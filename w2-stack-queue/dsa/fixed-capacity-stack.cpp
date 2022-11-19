@@ -1,5 +1,8 @@
 #include "fixed-capacity-stack.h"
 
+#include <iostream>
+using namespace std;
+
 FixedCapacityStack::FixedCapacityStack(int n) {
     stack = new string[n];
     count = 0;

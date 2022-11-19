@@ -1,7 +1,5 @@
-#pragma once
-
-#include<iostream>
-using namespace std;
+#ifndef NODE_H
+#define NODE_H
 
 class Node {
     private:
@@ -19,3 +17,5 @@ class Node {
 
         string getText();
 };
+
+#endif

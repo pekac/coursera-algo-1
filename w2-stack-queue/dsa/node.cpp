@@ -1,5 +1,8 @@
 #include "node.h"
 
+#include <iostream>
+using namespace std;
+
 Node::Node(string item) {
     text = item;
     next = NULL;
