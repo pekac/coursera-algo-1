@@ -1,17 +1,21 @@
 all: program
 
-program: generic-node.o deque-iterator.o deque.o main.o  
-	g++ -o program main.o deque.o deque-iterator.o generic-node.o
+program: main.o deque.o deque-iterator.o generic-node.o iterable.o iterator.o
+	g++ -o program main.o deque.o deque-iterator.o generic-node.o iterable.o iterator.o
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+deque.o: deque.h
+
+deque-iterator.o: deque-iterator.h
 
 generic-node.o: ../../dsa/generic-node.cpp ../../dsa/generic-node.h
 	g++ -c ../../dsa/generic-node.cpp
 
-deque-iterator.o: deque-iterator.h
+iterable.o: iterable.h
 
-deque.o: deque.h
-
-main.o: main.cpp
-	g++ -c main.cpp
+iterator.o: iterator.h
 
 clean:
 	rm *.o deque

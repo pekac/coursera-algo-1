@@ -1,3 +1,6 @@
+#ifndef QUICK_UNION_WEIGHTED_H
+#define QUICK_UNION_WEIGHTED_H
+
 class QuickUnionWeighted {
     private:
         int *ids;
@@ -14,3 +17,5 @@ class QuickUnionWeighted {
 
         bool connected(int a, int b);
 };
+
+#endif

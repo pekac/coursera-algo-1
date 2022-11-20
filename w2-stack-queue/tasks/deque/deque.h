@@ -1,3 +1,10 @@
+#ifndef DEQUE_H
+#define DEQUE_H
+
+#include "../../dsa/generic-node.h"
+#include "iterator.h"
+#include "iterable.h"
+
 template<class T>
 class Deque: public Iterable<T> {
     private:
@@ -31,3 +38,5 @@ class Deque: public Iterable<T> {
     // return an iterator over items in order from front to back
     Iterator<T>* iterator();
 };
+
+#endif

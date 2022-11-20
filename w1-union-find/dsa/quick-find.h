@@ -1,4 +1,5 @@
-#pragma once
+#ifndef QUICK_FIND_H
+#define QUICK_FIND_H
 
 class QuickFind {
     private:
@@ -13,3 +14,5 @@ class QuickFind {
 
         bool connected(int a, int b);
 };
+
+#endif

@@ -1,5 +1,3 @@
-#include "../../dsa/generic-node.h"
-#include "iterable.h"
 #include "deque-iterator.h"
 
 #include<iostream>

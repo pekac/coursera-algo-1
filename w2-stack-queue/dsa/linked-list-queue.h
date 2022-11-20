@@ -1,3 +1,6 @@
+#ifndef LINKED_LIST_QUEUE_H
+#define LINKED_LIST_QUEUE_H
+
 class LinkedListQueue {
     private:
         Node* first;
@@ -13,3 +16,5 @@ class LinkedListQueue {
 
         string dequeue();
 };
+
+#endif

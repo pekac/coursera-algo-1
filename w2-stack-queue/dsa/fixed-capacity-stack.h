@@ -1,3 +1,6 @@
+#ifndef FIXED_CAPACITY_STACK_H
+#define FIXED_CAPACITY_STACK_H
+
 class FixedCapacityStack {
     private:
         string *stack;
@@ -13,3 +16,5 @@ class FixedCapacityStack {
 
         string pop();
 };
+
+#endif

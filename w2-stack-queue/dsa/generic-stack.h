@@ -1,3 +1,6 @@
+#ifndef GENERIC_STACK_H
+#define GENERIC_STACK_H
+
 template<class T>
 class Stack {
     private:
@@ -13,3 +16,5 @@ class Stack {
 
         T pop();
 };
+
+#endif

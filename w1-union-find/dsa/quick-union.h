@@ -1,4 +1,5 @@
-#pragma once
+#ifndef QUICK_UNION_H
+#define QUICK_UNION_H
 
 class QuickUnion {
     private:
@@ -15,3 +16,5 @@ class QuickUnion {
 
         bool connected(int a, int b);
 };
+
+#endif
