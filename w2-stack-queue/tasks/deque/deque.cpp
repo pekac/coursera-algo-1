@@ -91,3 +91,5 @@ template<class T>
 Iterator<T>* Deque<T>::iterator() {
     return new DequeIterator<T>(first);
 }
+/* undefined ref fix - not sure if valid */
+template class Deque<int>;

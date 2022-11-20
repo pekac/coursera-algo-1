@@ -24,3 +24,6 @@ T DequeIterator<T>::next() {
     current = current->getNext();
     return res;
 }
+
+/* undefined ref fix - not sure if valid */
+template class DequeIterator<int>;

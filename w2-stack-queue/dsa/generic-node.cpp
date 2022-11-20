@@ -27,3 +27,5 @@ template<class T>
 T TNode<T>::getValue() {
     return item;
 }
+/* undefined ref fix - not sure if valid */
+template class TNode<int>;
