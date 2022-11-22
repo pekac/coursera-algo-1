@@ -18,9 +18,9 @@ bool Stack<T>::isEmpty() {
 
 template<class T>
 void Stack<T>::push(T val) {
-    TNode<T> *old_first = first;
+    TNode<T> *oldFirst = first;
     first = new TNode<T>(val);
-    first->linkNext(old_first);
+    first->linkNext(oldFirst);
 }
 
 template<class T>

@@ -24,9 +24,9 @@ void LinkedListQueue::enqueue(string text) {
         return;
     }
 
-    Node* old_last = last;
+    Node* oldLast = last;
     last = new Node(text);
-    old_last->linkNext(last);
+    oldLast->linkNext(last);
 }
 
 string LinkedListQueue::dequeue() {

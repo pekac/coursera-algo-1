@@ -17,9 +17,9 @@ bool LinkedListStack::isEmpty() {
 }        
 
 void LinkedListStack::push(string text) {
-    Node *old_first = first;
+    Node *oldFirst = first;
     first = new Node(text);
-    first->linkNext(old_first);
+    first->linkNext(oldFirst);
 }
 
 string LinkedListStack::pop() {
