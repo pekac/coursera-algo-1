@@ -1,5 +1,5 @@
 #include "randomized-queue.h"
-
+#include "time.h"
 #include <cstddef>
 #include <cstdlib>
 
@@ -56,7 +56,6 @@ T RandomizedQueue<T>::dequeue() {
     T removeItem = array[index];
     array[index] = array[n];
     /* remove last */
-    delete array[n];
     n--;
     return removeItem;
 }

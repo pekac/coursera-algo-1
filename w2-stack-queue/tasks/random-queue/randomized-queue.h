@@ -1,9 +1,8 @@
 #ifndef RANDOMIZED_QUEUE_H
 #define RANDOMIZED_QUEUE_H
 
-#include "../../dsa/generic-node.h"
-#include "../deque/iterator.h"
-#include "../deque/iterable.h"
+#include "../../dsa/iterator.h"
+#include "../../dsa/iterable.h"
 
 template<class T>
 class RandomizedQueue: public Iterable<T> {

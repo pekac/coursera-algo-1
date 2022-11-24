@@ -1,8 +1,7 @@
 #ifndef RND_QUEUE_ITERATOR_H
 #define RND_QUEUE_ITERATOR_H
 
-#include "../deque/iterator.h"
-#include "../../dsa/generic-node.h"
+#include "../../dsa/iterator.h"
 
 template<class T>
 class RndQuequeIterator: public Iterator<T> {
