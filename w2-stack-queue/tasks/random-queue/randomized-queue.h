@@ -8,12 +8,13 @@
 template<class T>
 class RandomizedQueue: public Iterable<T> {
     private:
-        int count;
-        TNode<T>* first;
-        TNode<T>* last;
+        int n;
+        int capacity;
+        T* array;
+        void resize(int size);
     public:
         // construct an empty randomized queue
-        RandomizedQueue();
+        RandomizedQueue(int size);
         
         ~RandomizedQueue();
 
