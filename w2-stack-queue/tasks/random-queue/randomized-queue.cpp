@@ -1,4 +1,5 @@
 #include "randomized-queue.h"
+#include "rnd-queue-iterator.h"
 #include "time.h"
 #include <cstddef>
 #include <cstdlib>
@@ -72,8 +73,8 @@ T RandomizedQueue<T>::sample() {
 
 template<class T>
 Iterator<T>* RandomizedQueue<T>::iterator() {
-    
-    /* shuffle the queue and return from first to last? */
+    /* shuffle the queue and return from first to last */
+    return new RndQuequeIterator<T>(array, n);
 }
  
 template class RandomizedQueue<int>;
