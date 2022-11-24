@@ -13,9 +13,11 @@ deque-iterator.o: deque-iterator.h
 generic-node.o: ../../dsa/generic-node.cpp ../../dsa/generic-node.h
 	g++ -c ../../dsa/generic-node.cpp
 
-iterable.o: iterable.h
+iterable.o: ../../dsa/iterable.cpp ../../dsa/iterable.h
+	g++ -c ../../dsa/iterable.cpp
 
-iterator.o: iterator.h
+iterator.o: ../../dsa/iterator.cpp ../../dsa/iterator.h
+	g++ -c ../../dsa/iterator.cpp
 
 clean:
-	rm *.o deque
+	rm *.o program

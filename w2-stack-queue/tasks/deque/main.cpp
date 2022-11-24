@@ -1,5 +1,5 @@
 #include "deque.h"
-#include "iterator.h"
+#include "../../dsa/iterator.h"
 
 #include<iostream>
 using namespace std;

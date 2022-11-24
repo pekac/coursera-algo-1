@@ -2,8 +2,8 @@
 #define DEQUE_H
 
 #include "../../dsa/generic-node.h"
-#include "iterator.h"
-#include "iterable.h"
+#include "../../dsa/iterator.h"
+#include "../../dsa/iterable.h"
 
 template<class T>
 class Deque: public Iterable<T> {

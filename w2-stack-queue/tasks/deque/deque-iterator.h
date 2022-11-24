@@ -1,7 +1,7 @@
 #ifndef DEQUE_ITERATOR_H
 #define DEQUE_ITERATOR_H
 
-#include "iterator.h"
+#include "../../dsa/iterator.h"
 #include "../../dsa/generic-node.h"
 
 template<class T>
