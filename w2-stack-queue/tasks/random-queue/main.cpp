@@ -22,11 +22,6 @@ int main() {
     }
     cout << "Iterator end" << endl;
 
-    Iterator<int>* iterator2 = queue->iterator();
-    while (iterator2->hasNext()) {
-        int value = iterator2->next();
-        cout << "Iterator2 elemento: " << value << endl;
-    }
     cout << "Iterator2 end" << endl;
 
     int a = queue->dequeue();
@@ -50,14 +45,12 @@ int main() {
     int f = queue->dequeue();
     cout << "Value removed f: " << f << endl;
 
-    Iterator<int>* iterator3 = queue->iterator();
-    while (iterator3->hasNext()) {
-        int value = iterator3->next();
-        cout << "Iterator3 elemento: " << value << endl;
+    Iterator<int>* iterator2 = queue->iterator();
+    while (iterator2->hasNext()) {
+        int value = iterator2->next();
+        cout << "Iterator2 elemento: " << value << endl;
     }
-    cout << "Iterator3 end" << endl;
-
-
+    cout << "Iterator2 end" << endl;
 
     return 0;
 }

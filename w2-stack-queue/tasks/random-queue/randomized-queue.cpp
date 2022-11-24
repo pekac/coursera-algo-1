@@ -53,9 +53,10 @@ T RandomizedQueue<T>::dequeue() {
     }
     
     int index = rand() % n;
-    /* swap rand index with last */
+    /* swap index with last */
     T removeItem = array[index];
-    array[index] = array[n];
+    array[index] = array[n - 1];
+    array[n - 1] = removeItem;
     /* remove last */
     n--;
     return removeItem;
