@@ -1,7 +1,7 @@
-all: week1
+all: program
 
-week1: main.o percolation.o quick-union-weighted.o
-	g++ -o week1 main.o percolation.o quick-union-weighted.o
+program: main.o percolation.o quick-union-weighted.o
+	g++ -o program main.o percolation.o quick-union-weighted.o
 
 percolation.o: ./tasks/percolation.cpp ./tasks/percolation.h
 	g++ -c ./tasks/percolation.cpp
