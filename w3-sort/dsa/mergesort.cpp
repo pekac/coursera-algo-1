@@ -1,4 +1,4 @@
-#include "merge-sort.h"
+#include "mergesort.h"
 
 #include<iostream>
 using namespace std;

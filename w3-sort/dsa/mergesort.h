@@ -1,5 +1,5 @@
-#ifndef MERGE_SORT_H
-#define MERGE_SORT_H
+#ifndef MERGESORT_H
+#define MERGESORT_H
 
 void merge(int* array, int* tempArray, int lo, int mid, int hi);
 void sort(int* array, int* tempArray, int lo, int hi);
