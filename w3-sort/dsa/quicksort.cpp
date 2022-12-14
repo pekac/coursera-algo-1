@@ -41,4 +41,33 @@ void quickSort(int* array, int size) {
     shuffle(array, array + size, default_random_engine(0));
     sort(array, 0, size - 1);
 }
+
+void quickSortThreeWay(int* array, int lo, int hi) {
+    if (hi <= lo) return;
+    int lt = lo;
+    int gt = hi;
+    int v = array[lo];
+    int i = lo;
+    while (i <= gt) {
+        if (array[i] < v) {
+            int temp = array[i];
+            array[i] = array[lt];
+            array[lt] = temp;
+            
+            i++;
+            lt++;
+        } else if (array[i] > v) {
+            int temp = array[i];
+            array[i] = array[gt];
+            array[gt] = temp;
+            
+            gt--;
+        } else {
+            i++;
+        }
+    }
+
+    quickSortThreeWay(array, lo, lt - 1);
+    quickSortThreeWay(array, gt + 1, hi);
+}
    
