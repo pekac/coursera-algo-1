@@ -13,4 +13,4 @@ main.o: ./tasks/main.cpp
 	g++ -c ./tasks/main.cpp
 
 clean:
-	rm *.o week1 ./**/*.gch
+	rm *.o week1 program
