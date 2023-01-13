@@ -1,8 +1,5 @@
 #include "unordered-max-pq.h"
 
-#include<iostream>
-using namespace std;
-
 /* lazy implementation, no checks, no resize */
 UnorderedMaxPQ::UnorderedMaxPQ(int size) {
     n = 0;

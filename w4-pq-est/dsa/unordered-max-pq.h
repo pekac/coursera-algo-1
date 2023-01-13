@@ -7,13 +7,9 @@ class UnorderedMaxPQ {
         int* array;
     public:
         UnorderedMaxPQ(int size);
-
         ~UnorderedMaxPQ();
-
         bool isEmpty();
-
         void insert(int item);
-
         int removeMax();
 };
 
