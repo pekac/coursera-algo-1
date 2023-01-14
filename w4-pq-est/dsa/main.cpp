@@ -1,24 +1,25 @@
-#include "heap-max-pq.h"
+#include "heapsort.h"
 
 #include<iostream>
 using namespace std;
 
 int main() {
-    HeapMaxPQ* hpq = new HeapMaxPQ(10);
-    hpq->insert(24);
-    hpq->insert(13);
-    hpq->insert(61);
-    hpq->insert(17);
-    hpq->insert(7);
-    hpq->insert(11);
-    hpq->insert(45);
-    hpq->insert(5);
-    hpq->insert(29);
+    int size = 8;
+    int* array = new int[size];
+    array[0] = 45;
+    array[1] = 13;
+    array[2] = 19;
+    array[3] = 10001;
+    array[4] = 25;
+    array[5] = 555;
+    array[6] = 38;
+    array[7] = 667;
 
-    for (int i = 0; i < 9; i++) {
-        int max = hpq->removeMax();
-        cout << "Max elemento: " << max << endl;
-    } 
+    heapsort(array, size);
+
+    for (int i = 0; i < size; i++) {
+        cout << "Elemento: " << array[i] << endl;
+    }
 
     return 0;
 }
