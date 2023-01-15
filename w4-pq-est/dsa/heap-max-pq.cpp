@@ -34,13 +34,14 @@ int HeapMaxPQ::removeMax() {
 }
 
 void HeapMaxPQ::sink(int i) {
-    if (i >= n - 2) {
-        return;
-    }
-
     int left = 2 * i + 1;
     int right = 2 * i + 2;
-    int swapIndex = array[left] > array[right] ? left : right;
+
+    if (left >= n) {
+        return;
+    }
+    
+    int swapIndex = right > n - 1 ? left : array[left] > array[right] ? left : right;
 
     if  (array[i] < array[swapIndex]) {
         int temp = array[i];

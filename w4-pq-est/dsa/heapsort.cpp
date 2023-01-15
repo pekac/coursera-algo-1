@@ -1,27 +1,27 @@
 #include "heapsort.h"
 
 void heapsort(int* array, int size) {
-    int half = size % 2 == 0 ? size / 2 : (size - 1) / 2;
-    for (int i = half; i > 0; i--) {
+    int half = (size - 1) % 2 == 0 ? ((size - 1) - 2) / 2 : (size - 1) / 2;
+    for (int i = half; i >= 0; i--) {
         sink(array, i, size);
     }
 
     while(size > 1) {
-        swap(array, 1, size - 1);
+        swap(array, 0, size - 1);
         size--;
-        sink(array, 1, size);
+        sink(array, 0, size);
     }
-
 }
 
 void sink(int* array, int i, int size) {
-    if (i >= size - 2) {
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left >= size) {
         return;
     }
 
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
-    int swapIndex = array[left] > array[right] ? left : right;
+    int swapIndex = right > size - 1 ? left : array[left] > array[right] ? left : right;
 
     if  (array[i] < array[swapIndex]) {
         swap(array, i, swapIndex);
