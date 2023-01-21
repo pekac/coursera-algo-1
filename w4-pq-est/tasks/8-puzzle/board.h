@@ -1,14 +1,12 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "../../w2-stack-queue/dsa/iterable.h"
-
 #include <iostream>
 #include <string>
 
 using std::string;
 
-class Board: public Iterable<Board> {
+class Board {
     private:
         int n;
         int emptyI;
@@ -40,7 +38,9 @@ class Board: public Iterable<Board> {
         bool equals(Board* b);  
 
         // all neighboring boards
-        Iterator<Board>* iterator();
+        vector<Board*> neighbors();
+
+        Board* createNeighbor(int swapI, int swapJ);
 
         // WTF::a board that is obtained by exchanging any pair of tiles
         // Board twin();

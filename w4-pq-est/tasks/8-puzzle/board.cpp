@@ -1,8 +1,10 @@
 #include "board.h"
 #include <cmath>
+#include <vector>
 
 using std::abs;
 using std::to_string;
+using std::vector;
 
 Board::Board(int size, int** board) {
     n = size;
@@ -92,7 +94,42 @@ bool Board::equals(Board* b) {
     return true;
 }
 
-Iterator<Board>* Board::iterator() {
 
+Board* Board::createNeighbor(int swapI, int swapJ) {
+    Board* b = new Board(n, tiles);
+    int temp = b->tiles[swapI][swapJ];
+    b->tiles[swapI][swapJ] = b->tiles[emptyI][emptyJ];
+    b->tiles[emptyI][emptyJ] = temp;
+    return b;
+}
+
+vector<Board*> Board::neighbors() {
+    vector<Board*> neighbors;
+
+    // top 
+    if (emptyI > 0) {
+        Board* b = createNeighbor(emptyI - 1, emptyJ);
+        neighbors.push_back(b);
+    }
+
+    // bottom
+    if (emptyI < n - 1) {
+        Board* b = createNeighbor(emptyI + 1, emptyJ);
+        neighbors.push_back(b);
+    }
+
+    // left
+    if (emptyJ > 0) {
+        Board* b = createNeighbor(emptyI, emptyJ - 1);
+        neighbors.push_back(b);
+    }
+
+    // right
+    if (emptyJ < n - 1) {
+        Board* b = createNeighbor(emptyI, emptyJ + 1);
+        neighbors.push_back(b);
+    }
+
+    return neighbors;
 }
 
