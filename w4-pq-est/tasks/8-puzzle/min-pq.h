@@ -18,6 +18,7 @@ class MinPQ {
         bool isEmpty();
         void insert(SearchNode* item);
         SearchNode* removeMin();
+        void print();
 };
 
 #endif

@@ -44,6 +44,8 @@ class Board {
 
         Board* createNeighbor(int swapI, int swapJ);
 
+        void updateEmpty(int i, int j);
+
         // a board that is obtained by exchanging any pair of tiles
         // Board twin();
 };

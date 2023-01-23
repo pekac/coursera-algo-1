@@ -8,7 +8,9 @@ using std::vector;
 
 Board::Board(int size, int** board) {
     n = size;
+    tiles = new int*[n];
     for (int i = 0; i < n; i++) {
+        tiles[i] = new int[n];
         for (int j = 0; j < n; j++) {
             tiles[i][j] = board[i][j];
             if (tiles[i][j] == 0) {
@@ -31,9 +33,9 @@ string Board::toString() {
     string str = to_string(n) + "\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n - 1; j++) {
-            str += tiles[i][j] + " ";
+            str += to_string(tiles[i][j]) + " ";
         }
-        str += tiles[i][n - 1] + "\n";
+        str += to_string(tiles[i][n - 1]) + "\n";
     }
     return str;
 }
@@ -75,11 +77,11 @@ int Board::manhattan() {
 }
 
 bool Board::isGoal() {
-    return manhattan() + hamming() == 0;
+    return hamming() == 0;
 }
 
 bool Board::equals(Board* b) {
-    if (n != b->dimension()) {
+    if (b == NULL || n != b->dimension()) {
         return false;
     }
 
@@ -94,12 +96,17 @@ bool Board::equals(Board* b) {
     return true;
 }
 
+void Board::updateEmpty(int i, int j) {
+    emptyI = i;
+    emptyJ = j;
+};
 
 Board* Board::createNeighbor(int swapI, int swapJ) {
     Board* b = new Board(n, tiles);
     int temp = b->tiles[swapI][swapJ];
     b->tiles[swapI][swapJ] = b->tiles[emptyI][emptyJ];
     b->tiles[emptyI][emptyJ] = temp;
+    b->updateEmpty(swapI, swapJ);
     return b;
 }
 

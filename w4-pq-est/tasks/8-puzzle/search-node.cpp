@@ -1,5 +1,8 @@
 #include "search-node.h"
 
+using std::cout;
+using std::endl;
+
 SearchNode::SearchNode(Board* x, int n, SearchNode* previous) {
     b = x;
     moves = n;
@@ -9,6 +12,10 @@ SearchNode::SearchNode(Board* x, int n, SearchNode* previous) {
 SearchNode::~SearchNode() {
     delete b;
     delete prev;
+}
+
+int SearchNode::getMoves() {
+    return moves;
 }
 
 int SearchNode::priority() {

@@ -12,6 +12,7 @@ class SearchNode {
         SearchNode(Board* b, int moves, SearchNode* prev);
         ~SearchNode();
         int priority();
+        int getMoves();
         Board* getBoard();
         Board* getPreviousBoard();
 };

@@ -1,7 +1,8 @@
 #include "min-pq.h"
 
 #include<iostream>
-using namespace std;
+using std::cout;
+using std::endl;
 
 MinPQ::MinPQ() {
     n = 0;
@@ -17,7 +18,12 @@ bool MinPQ::isEmpty() {
 }
 
 void MinPQ::insert(SearchNode* item) {
-    array[n] = item;
+    if (n >= array.size()) {
+        array.push_back(item);
+    } else {
+        array[n] = item;
+    }
+    
     n++;
     swim(n - 1);
 }
@@ -27,6 +33,10 @@ SearchNode* MinPQ::removeMin() {
     array[0] = array[n - 1];
     array[n - 1] = 0;
     n--;
+    if (n == 0) {
+        array.clear();
+    }
+    array.shrink_to_fit();
 
     sink(0);
 
@@ -59,11 +69,26 @@ void MinPQ::swim(int i) {
     
     int parentIndex = i % 2 == 0 ? (i - 2) / 2 : (i - 1) / 2;
 
-    if (array[i]->priority() > array[parentIndex]->priority()) {
+    int firstPriority = array[i]->priority();
+    int secondPriority = array[parentIndex]->priority();
+
+    if (firstPriority < secondPriority) {
         SearchNode* temp = array[i];
         array[i] = array[parentIndex];
         array[parentIndex] = temp;
 
         swim(parentIndex);
+    }
+}
+
+void MinPQ::print() {
+    // cout << "MIN PRIORITY QUEUE state: " << endl;
+    for(SearchNode* item : array) {
+        // Board* b = item->getBoard();
+        // string str = b->toString();
+        // cout << "Board: " << str << endl;
+        cout << "Moves: " << item->getMoves() << endl;
+        // cout << "Priority: " << item->priority() << endl << endl;
+        cout << "END" << endl << endl;
     }
 }

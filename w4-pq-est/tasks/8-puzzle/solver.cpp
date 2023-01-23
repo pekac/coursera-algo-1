@@ -14,7 +14,7 @@ Solver::~Solver() {
 };
 
 bool Solver::isSolvable() {
-
+    return false;
 };
 
 int Solver::minMoves() {
@@ -26,9 +26,16 @@ int Solver::solve() {
         return -1;   
     }
 
+    // pqueue->print();
+
     SearchNode* first = pqueue->removeMin();
     Board* board = first->getBoard();
-    Board* prevBoard = first->getPreviousBoard();
+    Board* prevBoard = NULL;
+
+    if (first->getMoves() > 0) {
+        prevBoard = first->getPreviousBoard();
+    }
+
     if (board->isGoal()) {
         return 1;
     }
@@ -36,10 +43,10 @@ int Solver::solve() {
     vector<Board*> neighbors = board->neighbors();
     for(Board* item : neighbors) {
         if (!item->equals(prevBoard)) {
-            SearchNode* node = new SearchNode(item, moves + 1, first);
+            SearchNode* node = new SearchNode(item, first->getMoves() + 1, first);
             pqueue->insert(node);
         }
     }
 
-    solve();
+    return solve();
 };
