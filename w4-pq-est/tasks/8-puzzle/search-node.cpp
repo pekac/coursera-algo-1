@@ -14,3 +14,11 @@ SearchNode::~SearchNode() {
 int SearchNode::priority() {
     return b->hamming() + moves;
 }
+
+Board* SearchNode::getBoard() {
+    return b;
+}
+
+Board* SearchNode::getPreviousBoard() {
+    return prev->getBoard();
+}
