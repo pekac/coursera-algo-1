@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using std::string;
+using std::vector;
 
 class Board {
     private:
@@ -42,7 +44,7 @@ class Board {
 
         Board* createNeighbor(int swapI, int swapJ);
 
-        // WTF::a board that is obtained by exchanging any pair of tiles
+        // a board that is obtained by exchanging any pair of tiles
         // Board twin();
 };
 
