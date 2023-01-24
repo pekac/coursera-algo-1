@@ -46,10 +46,11 @@ int Solver::solve() {
     SearchNode* first = pqueue->removeMin();
     
     Board* board = first->getBoard();
+    addUsedBoard(board->getKey());
+    
     Board* prevBoard = NULL;
 
     if (first->getMoves() > 0) {
-        addUsedBoard(board->getKey());
         prevBoard = first->getPreviousBoard();
     }
 

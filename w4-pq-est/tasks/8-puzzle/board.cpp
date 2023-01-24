@@ -3,11 +3,15 @@
 #include <vector>
 
 using std::abs;
+using std::floor;
 using std::to_string;
 using std::vector;
 
 Board::Board(int size, int** board) {
     n = size;
+    priority = 0;
+    totalManhattan = 0;
+    key = "";
     tiles = new int*[n];
     for (int i = 0; i < n; i++) {
         tiles[i] = new int[n];
@@ -16,12 +20,18 @@ Board::Board(int size, int** board) {
             if (tiles[i][j] == 0) {
                 emptyI = i;
                 emptyJ = j;
+            } else if (tiles[i][j] != i * n + j + 1) {
+                priority++;
             }
+            int val = tiles[i][j];
+
+            int goalI = val % n == 0 ? val / n - 1 : floor(val / n);
+            int goalJ = val - (goalI * n + 1);
+
+            totalManhattan += abs(goalI - i) + abs(goalJ - j);
+            key += to_string(tiles[i][j]) + " ";
         }   
     }
-    // do both through first loop pls
-    priority = hamming();
-    key = toString();
 }
 
 Board::~Board() {
@@ -70,7 +80,7 @@ int Board::manhattan() {
 
             int val = tiles[i][j];
 
-            int goalI = val % n == 0 ? val / n - 1 : val % n;
+            int goalI = val % n == 0 ? val / n - 1 : floor(val / n);
             int goalJ = val - (goalI * n + 1);
 
             totalManhattan += abs(goalI - i) + abs(goalJ - j);
@@ -80,7 +90,7 @@ int Board::manhattan() {
 }
 
 int Board::getPriority() {
-    return priority;
+    return totalManhattan + priority;
 }
 
 string Board::getKey() {
@@ -88,7 +98,7 @@ string Board::getKey() {
 }
 
 bool Board::isGoal() {
-    return hamming() == 0;
+    return manhattan() == 0;
 }
 
 bool Board::equals(Board* b) {
@@ -107,17 +117,17 @@ bool Board::equals(Board* b) {
     return true;
 }
 
-void Board::updateEmpty(int i, int j) {
-    emptyI = i;
-    emptyJ = j;
-};
-
 Board* Board::createNeighbor(int swapI, int swapJ) {
+    // swap and create
+    int temp = tiles[swapI][swapJ];
+    tiles[swapI][swapJ] = tiles[emptyI][emptyJ];
+    tiles[emptyI][emptyJ] = temp;
     Board* b = new Board(n, tiles);
-    int temp = b->tiles[swapI][swapJ];
-    b->tiles[swapI][swapJ] = b->tiles[emptyI][emptyJ];
-    b->tiles[emptyI][emptyJ] = temp;
-    b->updateEmpty(swapI, swapJ);
+
+    // swap back for original board to remain unaffected
+    temp = tiles[swapI][swapJ];
+    tiles[swapI][swapJ] = tiles[emptyI][emptyJ];
+    tiles[emptyI][emptyJ] = temp;
     return b;
 }
 

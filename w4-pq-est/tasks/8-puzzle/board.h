@@ -15,6 +15,7 @@ class Board {
         int emptyJ;
         int** tiles;
         int priority;
+        int totalManhattan;
         string key;
     public:
         // create a board from an n-by-n array of tiles,
@@ -51,8 +52,6 @@ class Board {
         vector<Board*> neighbors();
 
         Board* createNeighbor(int swapI, int swapJ);
-
-        void updateEmpty(int i, int j);
 
         // a board that is obtained by exchanging any pair of tiles
         // Board twin();

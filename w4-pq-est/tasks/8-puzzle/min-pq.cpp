@@ -85,11 +85,11 @@ void MinPQ::print() {
     int i = 1;
     cout << "MIN PRIORITY QUEUE state: " << endl;
     for(SearchNode* item : array) {
-        // Board* b = item->getBoard();
-        // string str = b->toString();
-        // cout << "Board: " << str << endl;
+        Board* b = item->getBoard();
+        string str = b->getKey();
+        cout << "Board: " << str << endl;
         // cout << "Moves: " << item->getMoves() << endl;
-        cout << "Index: " << i << endl;
+        // cout << "Index: " << i << endl;
         cout << "Priority: " << item->priority() << endl;
         cout << "END" << endl << endl;
         i++;
