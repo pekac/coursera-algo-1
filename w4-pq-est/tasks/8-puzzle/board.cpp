@@ -19,6 +19,9 @@ Board::Board(int size, int** board) {
             }
         }   
     }
+    // do both through first loop pls
+    priority = hamming();
+    key = toString();
 }
 
 Board::~Board() {
@@ -74,6 +77,14 @@ int Board::manhattan() {
         }
     }
     return totalManhattan;
+}
+
+int Board::getPriority() {
+    return priority;
+}
+
+string Board::getKey() {
+    return key;
 }
 
 bool Board::isGoal() {

@@ -51,9 +51,9 @@ void MinPQ::sink(int i) {
         return;
     }
     
-    int swapIndex = right > n - 1 ? left : array[left]->priority() > array[right]->priority() ? left : right;
+    int swapIndex = right > n - 1 ? left : array[left]->priority() < array[right]->priority() ? left : right;
 
-    if  (array[i] < array[swapIndex]) {
+    if  (array[i]->priority() > array[swapIndex]->priority()) {
         SearchNode* temp = array[i];
         array[i] = array[swapIndex];
         array[swapIndex] = temp;
@@ -82,13 +82,16 @@ void MinPQ::swim(int i) {
 }
 
 void MinPQ::print() {
-    // cout << "MIN PRIORITY QUEUE state: " << endl;
+    int i = 1;
+    cout << "MIN PRIORITY QUEUE state: " << endl;
     for(SearchNode* item : array) {
         // Board* b = item->getBoard();
         // string str = b->toString();
         // cout << "Board: " << str << endl;
-        cout << "Moves: " << item->getMoves() << endl;
-        // cout << "Priority: " << item->priority() << endl << endl;
+        // cout << "Moves: " << item->getMoves() << endl;
+        cout << "Index: " << i << endl;
+        cout << "Priority: " << item->priority() << endl;
         cout << "END" << endl << endl;
+        i++;
     }
 }

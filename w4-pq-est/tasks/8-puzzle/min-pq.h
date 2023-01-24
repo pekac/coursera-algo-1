@@ -1,5 +1,5 @@
-#ifndef MIN_PQ
-#define MIN_PQ
+#ifndef MIN_PQ_H
+#define MIN_PQ_H
 
 #include "search-node.h"
 #include <vector>

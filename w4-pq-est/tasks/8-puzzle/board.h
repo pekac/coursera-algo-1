@@ -14,6 +14,8 @@ class Board {
         int emptyI;
         int emptyJ;
         int** tiles;
+        int priority;
+        string key;
     public:
         // create a board from an n-by-n array of tiles,
         Board(int size, int** board);
@@ -32,6 +34,12 @@ class Board {
 
         // sum of Manhattan distances between tiles and goal
         int manhattan();
+
+        // get priority
+        int getPriority();
+
+        // get key
+        string getKey();
 
         // is this board the goal board?
         bool isGoal();

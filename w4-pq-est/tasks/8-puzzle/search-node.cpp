@@ -19,7 +19,7 @@ int SearchNode::getMoves() {
 }
 
 int SearchNode::priority() {
-    return b->hamming() + moves;
+    return b->getPriority() + moves;
 }
 
 Board* SearchNode::getBoard() {
