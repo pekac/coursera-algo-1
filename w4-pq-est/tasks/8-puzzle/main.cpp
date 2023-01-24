@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 
 int main() {
-    int n = 4;
+    int n = 3;
     int** tiles = new int*[n];
     for (int i = 0; i < n; i++) {
         tiles[i] = new int[n];
