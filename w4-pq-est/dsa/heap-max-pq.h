@@ -1,5 +1,5 @@
-#ifndef HEAP_MAX_PQ
-#define HEAP_MAX_PQ
+#ifndef HEAP_MAX_PQ_H
+#define HEAP_MAX_PQ_H
 
 class HeapMaxPQ {
     private:

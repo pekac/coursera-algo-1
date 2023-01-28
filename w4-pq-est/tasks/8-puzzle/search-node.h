@@ -1,5 +1,5 @@
-#ifndef SEARCH_NODE
-#define SEARCH_NODE
+#ifndef SEARCH_NODE_H
+#define SEARCH_NODE_H
 
 #include "board.h"
 

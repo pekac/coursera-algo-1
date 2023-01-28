@@ -1,5 +1,5 @@
-#ifndef UNORDERED_MAX_PQ
-#define UNORDERED_MAX_PQ
+#ifndef UNORDERED_MAX_PQ_H
+#define UNORDERED_MAX_PQ_H
 
 class UnorderedMaxPQ {
     private:
