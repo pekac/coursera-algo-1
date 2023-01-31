@@ -27,3 +27,13 @@ template<class T>
 void BstNode<T>::setValue(T val) {
     value = val;
 }
+
+template<class T>
+int BstNode<T>::getCount() {
+    return count;
+}
+
+template<class T>
+void BstNode<T>::setCount(int val) {
+    count = val;
+}

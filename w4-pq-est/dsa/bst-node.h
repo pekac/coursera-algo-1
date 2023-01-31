@@ -10,6 +10,7 @@ class BstNode {
     private:
         int key;
         T value;
+        int count;
     public:
         BstNode<T>* left;
         BstNode<T>* right;
@@ -19,6 +20,9 @@ class BstNode {
         int getKey();
         T getValue();
         void setValue(T value);
+        int getCount();
+        void setCount(int val);
+
 };
 
 #endif
