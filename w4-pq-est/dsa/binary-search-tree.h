@@ -15,8 +15,10 @@ class BinarySearchTree {
         ~BinarySearchTree();
         BstNode<T>* get(int key);
         BstNode<T>* put(int key, T value);
-        BstNode<T>* remove(int key);
+        void remove(int key);
+        BstNode<T>* removeSubtree(BstNode<T>* node, int key);
         BstNode<T>* min();
+        BstNode<T>* subtreeMin(BstNode<T>* node);
         BstNode<T>* max();
         // largest smaller key than arg
         BstNode<T>* floor(int key);
@@ -30,6 +32,10 @@ class BinarySearchTree {
         vector<BstNode<T>*> inorder();
         // inorder helper
         void inorderTraverse(BstNode<T>* node, vector<BstNode<T>*> nodes);
+        // delete min in tree
+        void removeMin();
+        // delete min in subtree
+        BstNode<T>* removeSubtreeMin(BstNode<T>* subtreeRoot);
 };
 
 #endif

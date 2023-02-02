@@ -56,13 +56,40 @@ BstNode<T>* BinarySearchTree<T>::put(int key, T value) {
 };
 
 template<class T>
-BstNode<T>* BinarySearchTree<T>::remove(int key) {
-    return NULL;
+void BinarySearchTree<T>::remove(int key) {
+    root = removeSubtree(root, key);
+};
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::removeSubtree(BstNode<T>* x, int key) {
+    if (x == NULL) return NULL;
+
+    if (key > x->getKey()) {
+        x->right = removeSubtree(x->right, key);
+    } else (key < x->getKey()) {
+        x->left = removeSubtree(x->left, key);
+    } 
+
+    if (x->left == NULL) return x->right;
+    if (x->right == NULL) return x->left;
+
+    BstNode<T>* temp = x;
+    x = subtreeMin(temp->right);
+    x->right = removeMin(temp->right);
+    x->left = temp->left;
+
+    x->setCount(x->left->getCount() + x->right->getCount() + 1);
+    return x;
 };
 
 template<class T>
 BstNode<T>* BinarySearchTree<T>::min() {
-    BstNode<T>* x = root;
+    return subtreeMin(root);
+};
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::subtreeMin(BstNode<T>* node) {
+    BstNode<T>* x = node;
     BstNode<T>* prev = NULL;
     while (x != NULL) {
         prev = x;
@@ -189,3 +216,24 @@ void BinarySearchTree<T>::inorderTraverse(BstNode<T>* node, vector<BstNode<T>*> 
     nodes.push_back(node);
     inorderTraverse(node->right, nodes);
 };
+
+template<class T>
+void BinarySearchTree<T>::removeMin() {
+    root = removeSubtreeMin(root);
+}
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::removeSubtreeMin(BstNode<T>* subtreeRoot) {
+    BstNode<T>* x = subtreeRoot;
+    BstNode<T>* prev = NULL;
+    while (x->left != NULL) {
+        prev = x;
+        x = x->left;
+    }
+
+    prev->left = x->right;
+    int prevCountRight = prev->right != NULL ? prev->right->getCount() : 0;
+    int xCountRight = x->right != NULL ? x->right->getCount() : 0;
+    prev->setCount(1 + prevCountRight + xCountRight);
+    return x;
+}
