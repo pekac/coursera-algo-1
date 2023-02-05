@@ -4,7 +4,15 @@ template<class T>
 BstNode<T>::BstNode(int k, T val) {
     key = k;
     value = val;
+    color = NULL;
 }
+
+template<class T>
+BstNode<T>::BstNode(int k, T val, bool clr) {
+    key = k;
+    value = val;
+    color = clr;
+}        
 
 template<class T>
 BstNode<T>::~BstNode() {
@@ -36,4 +44,9 @@ int BstNode<T>::getCount() {
 template<class T>
 void BstNode<T>::setCount(int val) {
     count = val;
+}
+
+template<class T>
+bool BstNode<T>::isRed() {
+    return color;
 }

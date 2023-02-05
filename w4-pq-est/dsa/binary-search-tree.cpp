@@ -1,5 +1,8 @@
 #include "binary-search-tree.h"
 
+const bool RED = true;
+const bool BLACK = false;
+
 template<class T>
 BinarySearchTree<T>::BinarySearchTree() {};
 
@@ -24,35 +27,35 @@ BstNode<T>* BinarySearchTree<T>::get(int key) {
 };
 
 template<class T>
-BstNode<T>* BinarySearchTree<T>::put(int key, T value) {
-    BstNode<T>* x = root;
-    BstNode<T>* prev = NULL;
-    while (x != NULL) {
-        prev = x;
-        if (key < x->getKey()) {
-            x = x->left;
-        } else if (key > x->getKey()) {
-            x = x->right;
-        } else {
-            x->setValue(value);
-            return x;
-        }
+BstNode<T>* BinarySearchTree<T>::insertAt(BstNode<T>* x, int key, T value) {
+    if (x == NULL) {
+        return new BstNode<T>(key, value, RED);
+    }
+    
+    if (key < x->getKey()) {
+        x->left = insertAt(x->left, key, value);
+    } else if (key > x->getKey()) {
+        x->right = insertAt(x->right, key, value);
+    } else {
+        x->setValue(value);
     }
 
-    x = new BstNode<T>(key, value);
-
-    int leftCount = x->left != NULL ? x->left->getCount() : 0;
-    int rightCount = x->right != NULL ? x->right->getCount() : 0;
-
-    x->setCount(1 + leftCount + rightCount);
-    
-    if (prev != NULL && prev->getKey() > x->getKey()) {
-        prev->left = x;
-    } else {
-        prev->right = x;
+    if (!x->left->isRed() && x->right->isRed()) {
+        x = rotateLeft(x);
+    }
+    if (x->left->isRed() && x->left->left->isRed()) { 
+        x = rotateRight(x);
+    }
+    if (x->left->isRed() && x->right->isRed()) {
+        x = flipColors(x);
     }
     
     return x;
+}
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::put(int key, T value) {
+    root = insertAt(root, key, value);
 };
 
 template<class T>
@@ -236,4 +239,44 @@ BstNode<T>* BinarySearchTree<T>::removeSubtreeMin(BstNode<T>* subtreeRoot) {
     int xCountRight = x->right != NULL ? x->right->getCount() : 0;
     prev->setCount(1 + prevCountRight + xCountRight);
     return x;
+}
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::rotateLeft(BstNode<T>* node) {
+    if (!node->right->isRed()) {
+        return NULL;
+    }
+
+    BstNode<T>* x = node->right;
+    node->right = x->left;
+    x->left = node;
+    x->color = node->color;
+    node->color = RED;
+    return x;
+}
+
+template<class T>
+BstNode<T>* BinarySearchTree<T>::rotateRight(BstNode<T>* node) {
+    if (!node->left->isRed()) {
+        return NULL;
+    }
+
+    BstNode<T>* x = node->left;
+    node->left = x->right;
+    x->right = node;
+    x->color = node->color;
+    node->color = RED;
+    return x;
+}
+
+template <class T>
+void BinarySearchTree<T>::flipColors(BstNode<T>* node) {
+    if (node->isRed() || !node->left->isRed() || !node->right->isRed()) {
+        return;
+    }
+    // true == "RED" && false == "BLACK"
+    // todo: find aliases
+    node->color = RED;
+    node->left->color = BLACK;
+    node->right->color = BLACK;
 }

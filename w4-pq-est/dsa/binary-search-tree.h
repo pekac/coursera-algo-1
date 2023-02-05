@@ -15,6 +15,8 @@ class BinarySearchTree {
         ~BinarySearchTree();
         BstNode<T>* get(int key);
         BstNode<T>* put(int key, T value);
+        // put helper
+        BstNode<T>* insertAt(BstNode<T>* node, int key, T value);
         void remove(int key);
         BstNode<T>* removeSubtree(BstNode<T>* node, int key);
         BstNode<T>* min();
@@ -36,6 +38,10 @@ class BinarySearchTree {
         void removeMin();
         // delete min in subtree
         BstNode<T>* removeSubtreeMin(BstNode<T>* subtreeRoot);
+        // Red-Black trees helpers
+        BstNode<T>* rotateLeft(BstNode<T>* node);
+        BstNode<T>* rotateRight(BstNode<T>* node);
+        void flipColors(BstNode<T>* node);
 };
 
 #endif
